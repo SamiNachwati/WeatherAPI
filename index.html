@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+        Developer: Sami Nachwati
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link type="text/css" href="my_styling.css" rel="stylesheet">
+    <script src="weather.js" defer></script>
+    <style>
+        main 
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            gap: 2em;
+        }
+
+        nav 
+        {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            color: powderblue;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) 
+        {
+            nav 
+            {
+                flex-flow: column wrap;
+            }
+
+            nav a:nth-last-child(2) 
+            {
+                margin-bottom: 25px;
+                margin-top: 15px;
+            }
+            main aside{
+                display: flex;
+                gap: 25px;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 490px)
+        {
+            body{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        main > div 
+        {
+            display: grid;
+            grid-column: 2;
+            background-color: seashell;
+            border-radius: 5%;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 50px;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap;
+            width: 50%;
+        }
+
+        p > img
+        {
+            width: 100px;
+            animation: slide 1s ease-in-out forwards;
+        } 
+
+        @keyframes slide
+        {
+            0%
+            {
+                opacity: 0%;
+                transform: translateX(-30px);
+            }
+            100%
+            {
+                opacity: 100%;
+                transform: translateX(0px)
+            }
+        }
+
+        div h3:last-child, div h3:nth-last-child(2)
+        {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 5px
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>
+            WeatherAPI
+        </h3>
+        <h3>
+            Sami.dev
+        </h3>
+        <a href="https://www.linkedin.com/in/sami-nachwati-519288264/">
+            <img src="img/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/SamiNachwati">
+            <img src="img/github.png" alt="GitHub">
+        </a>
+    </nav>
+    <main>
+        <aside>
+            <input type="text" id="city_name" name="city_name" placeholder="Search city name">
+            <div id="clickButton">
+                <img src="img/glass.png" alt="magnifiying glass">
+            </div>
+        </aside>
+        <div class="weatherContainer" id="weather-section">
+            <p id="error_message"></p>
+            <p id="weather"></p>
+            <h3 id="description">
+            </h3>
+            <h3 id="degrees">
+            </h3>
+            <h3 id="wind_data">
+            </h3>
+            <h3 id="humidity_data">
+            </h3>
+            <h3>
+                <img id="timeImg" class="icons" src="null" alt=""> 
+                <span id="time">
+                </span>
+            </h3>
+            <h3>
+                <img id="country" class="icons" src="null" alt="">
+                <span id="location">
+                </span>
+            </h3>
+        </div>
+    </main>
+</body>
+</html>
