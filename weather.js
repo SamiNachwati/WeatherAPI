@@ -47,10 +47,10 @@ function loadWeatherInfo(data)
         let temperature =  parseInt(data.main.temp - 273.15);
         degrees.innerHTML = temperature + "&deg; C";
         timeImg = document.querySelector("#timeImg");
-        timeImg.src = "img/time.png";
+        timeImg.src = "time.png";
         timeImg.alt = "time";
         let locationImg = document.querySelector("#country");
-        locationImg.src = "img/country.png";
+        locationImg.src = "country.png";
         locationImg.alt = "country";
     }
     catch (error){
