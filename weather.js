@@ -39,7 +39,7 @@ function loadWeatherInfo(data)
         location.innerHTML = String(data.name) + ", " + String(data.sys.country);
         let utcTime = new Date();
         let localTime = new Date(utcTime.getTime() + data.timezone * 1000);
-        let easternTime = new Date(localTime.getTime() + (4 * 60 * 60 * 1000));
+        let easternTime = new Date(localTime.getTime() + (5 * 60 * 60 * 1000));
         time.innerHTML = "Time: " + easternTime.toLocaleTimeString();
         humidity.innerHTML = "Humidity: " +  data.main.humidity;
         wind.innerHTML = "wind: " + data.wind.speed;
